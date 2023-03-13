@@ -69,21 +69,30 @@
 
     <!--Formulários no Html-->
     <h2>Area de cadastro</h2>
-    <form action="login.html" method="GET">
-        <fieldset><legend>Dados Pessoais</legend>
+    <form action="login.html" method="POST" enctype="multipart/form-data"><!--enctype é usado para enviar arquivos-->
+        <!--Campo oculto-->
+        <input type="hidden" name="country" value="BR" >
+
+        <fieldset><legend style="background-color: rgb(164, 194, 194);">Dados Pessoais</legend>
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome" value="Jhonatan" placeholder="Digite seu nome">
+            <!-- pattern faz a formatação do campo-->
+            <input type="text" name="nome" id="nome" value="Jhonatan" placeholder="Digite seu nome" pattern="[A-Za-z]{3,}" required>
             <label for="email">Email</label>
             <input type="email" name="email" id="email" placeholder="Digite seu email">
+            <label for="Idade">Idade</label>
+            <input type="number" name="idade" id="idade" placeholder="Digite sua idade" step="2" min="18">
+            <!--Arquivo-->
+            <label for="foto do perfil">Foto do Perfil</label><br>
+            <input style="color: aliceblue;" type="file" name="foto" accept="image/*" multiple>
         </fieldset>
         
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
-        <label for="data">Data de Nascimento</label>
-        <input type="datetime-local" name="data" id="data">
-        </br>
-        <input type="range" name="range" id="range" min="0" max="20" step="1" value="5">
-        <br>
+        <fieldset><legend>Senha e Nascimento</legend>
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+            <label for="data">Data de Nascimento</label>
+            <input type="datetime-local" name="data" id="data" min="2023-01-01" min="2023-01-01 11:11">
+            <input style="display: block;margin: 0 auto" type="range" name="range" id="range" min="0" max="40" step="1" value="5">
+        </fieldset>
         <!--Checkbox-->
         <label >Sexo</label>
             <input type="radio" name="sexo">Masculino</option>
@@ -110,6 +119,7 @@
         <button >Clique aqui</button>
         
     </form>
+    <!--Link para outra pagina-->
     <a href="login.html" target="_blank">Formulários</a>
 
     <script src="assets/js/script.js"></script>
