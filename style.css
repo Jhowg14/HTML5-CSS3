@@ -1,3 +1,8 @@
+html{
+    font-size: 16px;
+    /*valor padrão do navegador*/
+}
+
 *{
     box-sizing: border-box;
 }
@@ -38,7 +43,7 @@ th, td{
     font-weight: normal;
 }
 tbody td:hover{
-    background-color: #ff0000;
+    background-color: hsl(100, 100%, 50%);
 }
 /* Tabela com cores alternadas */
 tbody tr:nth-child(even){
@@ -71,6 +76,7 @@ textarea{
     height: 50px;
     resize: none;/* não permite redimensionar o textarea */
 }
+
 button{
     padding: 10px;
     font-size: 15px;
@@ -87,9 +93,37 @@ fieldset{
     width: 200px;
     background-color: #EEE;
     border: 2px solid #22C;
+    color: #901212;
 }
 legend{
     font-size: 20px;
     font-weight: bold;
     color: #22C;
+}
+/* unidade absolutas - px , pt, cm, mm, in */
+.container{
+    width: 3in;
+    height: 200pt;
+    background-color: antiquewhite;
+
+}
+/*unidade relativa - em*/
+.box{
+    width: 50%;
+    font-size: 1em;
+    background-color: #0000ff;
+}
+/*unidade relativa - rem*/
+.boxinterno {
+    font-size: 2em;
+    width: 50%;
+    height: 2rem;
+    background-color: rgb(215, 250, 247);
+}
+/*unidade relativa - vw e vh*/
+.boxinterno2 {
+    font-size: 2em;
+    width: 50vw;
+    height: 2vh;
+    background-color: rgb(215, 250, 247);
 }
