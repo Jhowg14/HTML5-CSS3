@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id ="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css"><link/>
 </head>
@@ -84,7 +84,7 @@
             <!--Arquivo-->
             <label for="foto do perfil">Foto do Perfil</label><br>
             <!--accept="image/*" faz com que só seja aceito imagens-->
-            <input style="color: aliceblue;" type="file" name="foto" accept="image/*" multiple>
+            <input style="color: aliceblue; width: 100px;" type="file" name="foto" accept="image/*" multiple>
         </fieldset>
         
         <fieldset style="color: #d41a1a"><legend >Senha e Nascimento</legend>
@@ -135,8 +135,20 @@
     </div>
     <div class="box">
         <div class="boxinterno2">
-            Esta é a frase
+            teste2
         </div>
+    </div>
     <script src="assets/js/script.js"></script>
+    <!--Imagem responsiva-->
+    <picture>
+        <source srcset="assets/img/3.jpg" media="(min-width: 600px)">
+        <source srcset="assets/img/2.jpg" media="(min-width: 450px)">
+        <img id="img3" src="assets/img/3.jpg"  alt="imagem"><!--alt é usado para acessibilidade-->
+    </picture>
+    <div id="caixas">
+        <div class="caixa">Caixa1</div>
+        <div class="caixa">Caixa2</div>
+        <div class="caixa">Caixa3</div>
+    </div>
 </body>
 </html>

@@ -9,8 +9,10 @@ html{
 
 body {
     margin: 10px;
+    background-color: #f0e4e4;
 
 }
+
 .exemplo {
     background-color:green;
     width: 400px;
@@ -53,13 +55,13 @@ tbody tr:nth-child(even){
 label {
     display: block;
     margin-top: 10px;/* margem entre o label e o input */
+    width: 100px;
 }
 
 input[type=text], input[type=email], 
 input[type=password], 
 input[type=datetime-local],
 input[type=number],
-
 textarea,
 select{
     padding : 10px;
@@ -90,7 +92,7 @@ fieldset{
     border: 1px solid #CCC;
     padding: 10px;
     margin-top: 10px;
-    width: 200px;
+    width: 70px;
     background-color: #EEE;
     border: 2px solid #22C;
     color: #901212;
@@ -110,6 +112,7 @@ legend{
 /*unidade relativa - em*/
 .box{
     width: 50%;
+    height: 2em;
     font-size: 1em;
     background-color: #0000ff;
 }
@@ -126,4 +129,74 @@ legend{
     width: 50vw;
     height: 2vh;
     background-color: rgb(215, 250, 247);
+}
+/*imagens responsivas cover e contain*/
+#img3{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+/* responsividade media*/
+@media (max-width: 400px){
+    body {
+        background-color: rgb(133, 192, 126);
+    }
+    html{
+        font-size: 10px;
+        /*valor padrão do navegador*/
+    }
+}
+@media (min-width: 500px)and (max-width: 599px){
+    body {
+        background-color: rgb(195, 160, 211);
+    }
+}
+@media (min-width: 600px){
+    body {
+        background-color: rgb(185, 221, 209);
+    }
+    #img3{
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+}
+/* muda propriedades quando for impressão */
+@media only print{
+    .box{
+        display: none;
+    }
+    body {
+        font-size: 30px;
+    }
+    #img3{
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+    table{
+        border: 2px solid #000;
+    }
+}
+
+.caixa{
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    background-color: #22C;
+
+}
+#caixas{
+    width: 300px;
+    display: flex;
+}
+@media(orientation: landscape){
+    #caixas {
+        flex-direction: row;
+    }
+}
+@media (orientation: portrait){
+    #caixas {
+        flex-direction: column;
+    }    
 }
